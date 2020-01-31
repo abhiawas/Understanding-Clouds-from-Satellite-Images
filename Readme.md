@@ -98,3 +98,21 @@ multiple different levels and the decoder part semantically projects the discrim
 resolution features learnt by the encoder into higher resolution pixel space to get a dense
 classification.</p>
 <img src="https://github.com/abhiawas/Understanding-Clouds-from-Satellite-Images/blob/master/resources/img5.JPG">
+
+<h3>REFERENCES</h3>
+<li> He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask r-cnn. In Proceedings of the
+IEEE international conference on computer vision (pp. 2961-2969)</li>
+<li> Ronneberger, O., Fischer, P., & Brox, T. (2015, October). U-net: Convolutional networks
+for biomedical image segmentation. In International Conference on Medical image
+computing and computer-assisted intervention (pp. 234-241). Springer, Cham</li>
+<li> https://wiki.ubc.ca/CNNs_in_Image_Segmentation</li>
+<li>Rasp, S., Schulz, H., Bony, S., & Stevens, B. (2019). Combining crowd-sourcing and deep
+learning to understand meso-scale organization of shallow convection. arXiv preprint
+arXiv:1906.01906</li>
+<li>Zantedeschi, V., Falasca, F., Douglas, A., Strange, R., Kusner, M. J., & Watson-Parris, D.
+(2019). Cumulo: A Dataset for Learning Cloud Classes. arXiv preprint arXiv:1911.04227</li>
+<li>https://www.kaggle.com/c/understanding_cloud_organization/data#_=_</li>
+<li>Segmentation models: https://github.com/qubvel/segmentation_models</li>
+<li> Mask RCNN: https://github.com/matterport/Mask_RCNN</li>
+<li> https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-andtensorflow-
+7c761e238b46</li>
