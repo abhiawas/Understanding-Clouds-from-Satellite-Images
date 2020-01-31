@@ -46,3 +46,54 @@ into sizes 512*512 and 320*320 and created custom image data generator classes f
 two models(Mask-RCNN and UNET) respectively. We also used a train-validation split
 with a ratio of 90:10 for both the models.</li>
 </ul>
+
+<h2>Model Selection</h2>
+<h3>Mask RCNN</h3>
+<p>Mask RCNN is an artificial deep neural network aimed to solve object instance segmentation
+problem in machine learning or computer vision. Mask R-CNN efficiently detects objects in
+an image while simultaneously generating a high-quality segmentation mask for each instance.
+It extends Faster R-CNN by adding a branch for predicting a binary object mask in parallel
+with the existing branch for bounding box recognition [1].
+There are two stages of Mask R-CNN shown in figure-8. The first stage, called an RPN,
+proposes potential regions where there might be objects for a given image. The second stage,
+extracts features using ROI Pool from each candidate box(proposed potential regions),
+performs classification along with bounding box regression and generates a binary mask for
+each ROI. Both stages are connected to an FPN style deep neural network usually termed as
+the backbone structure. The backbone is usually a pretrained network like ConvNet, VGG or
+ResNet.
+In the first stage the RPN scans all the feature maps and proposes regions which may contain
+objects. To bind features to its raw image location efficiently the network uses a set of boxes
+with predefined locations and scales relative to the image called Anchors. The true masks and
+the bounding boxes are assigned to individual anchors according to some preset IoU value.
+The RPN uses anchors with different scales bind to different levels of feature map to figure
+out where the feature map „should‟ get an object and what size of its bounding box is [3].
+In the second stage the regions proposed by the first stage are assigned to several specific
+areas of a feature map, scans these areas, and generates object classes, bounding boxes and
+masks. This procedure looks similar to RPN, but the difference is that, stage-two uses
+ROIAlign to locate the relevant areas of feature map instead of anchors, and there is an
+additional branch which generates masks for each object in pixel level (pixel level
+classification).</p>
+<img src="https://github.com/abhiawas/Understanding-Clouds-from-Satellite-Images/blob/master/resources/img4.JPG">
+
+<h3>U-Net</h3>
+<p>The Artificial deep neural network takes the shape of an „U‟ hence termed as U-net. The UNet
+architecture for the most part is symmetric and consists of two major parts shown in
+Figure-9, the left/down part which is a contracting/downsampling path and the right/up part
+which is an expanding/upsampling path.
+The contracting path is similar to an encoder and consists of several convolution layers
+followed by an activation function(ReLU), batch norm and max-pooling layers. Its purpose is
+to capture the context of the input image via a compact feature map in order to perform
+segmentation. This coarse contextual information will then be transferred to the upsampling
+path by means of skip connections [5]. The encoder part is referred as a backbone of the U-Net
+and is usually a pretrained network like VGG, ResNet, InceptionNet, EfficientNet, DenseNet,
+etc.
+The expanding path is similar to a decoder which consists of deconvolution layers (upsampling)
+and concatenation followed by a symmetrical number of convolution layers with an
+activation function (ReLU) and batch normalization to that of the encoder part. The decoder
+part‟s purpose is to enable precise localization combined with contextual information from the
+contracting path. This step is done to retain boundary information (spatial information) despite
+down sampling and max-pooling performed in the encoder stage [2].
+In general terms the encoder part encodes the input image into feature representation at
+multiple different levels and the decoder part semantically projects the discriminative lower
+resolution features learnt by the encoder into higher resolution pixel space to get a dense
+classification.</p>
