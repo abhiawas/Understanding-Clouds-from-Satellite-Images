@@ -97,3 +97,4 @@ In general terms the encoder part encodes the input image into feature represent
 multiple different levels and the decoder part semantically projects the discriminative lower
 resolution features learnt by the encoder into higher resolution pixel space to get a dense
 classification.</p>
+<img src="https://github.com/abhiawas/Understanding-Clouds-from-Satellite-Images/blob/master/resources/img5.JPG">
