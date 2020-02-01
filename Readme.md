@@ -21,6 +21,8 @@ Mask Region based Convolution neural network(Mask-RCNN) and UNET</p>
 Images” which is acquired by NASA Worldwide. Data set can be found
 https://www.kaggle.com/c/understanding_cloud_organization/data</p>
 
+<p>Please see the full report https://github.com/abhiawas/Understanding-Clouds-from-Satellite-Images/blob/master/CISC-839_Project_Final_Report_Group2.pdf </p>
+
 <h3>REFERENCES</h3>
 <li> He, K., Gkioxari, G., Dollár, P., & Girshick, R. (2017). Mask r-cnn. In Proceedings of the
 IEEE international conference on computer vision (pp. 2961-2969)</li>
